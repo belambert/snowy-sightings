@@ -65,7 +65,7 @@ def sightings(
 
 @app.command()
 def check(
-    to: str = typer.Option(..., help="Recipient email address"),
+    to: str = typer.Option(..., help="Recipient email address(es), comma-separated"),
     state_file: Path = typer.Option(
         ".snowy-state.json", help="Path to state JSON file"
     ),
@@ -103,7 +103,8 @@ def check(
         f"<table><tr><th>Date</th><th>Count</th><th>Location</th><th>Link</th></tr>"
         f"{rows}</table>"
     )
-    send_email(to, f"🦉 {len(new)} new snowy owl sighting(s)", html)
+    recipients = [addr.strip() for addr in to.split(",")]
+    send_email(recipients, f"🦉 {len(new)} new snowy owl sighting(s)", html)
     typer.echo("Email sent.")
 
 

@@ -5,7 +5,7 @@ import os
 import resend
 
 
-def send_email(to: str, subject: str, body_html: str) -> dict:
+def send_email(to: list[str], subject: str, body_html: str) -> dict:
     """Send an email via Resend."""
     resend.api_key = os.environ["RESEND_API_KEY"]
     from_addr = os.environ.get("RESEND_FROM", "alerts@resend.dev")
