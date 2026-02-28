@@ -1,6 +1,6 @@
 # Snowy Sightings
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Bubo_scandiacus_%28Linnaeus%2C_1758%29_Male.jpg/480px-Bubo_scandiacus_%28Linnaeus%2C_1758%29_Male.jpg" alt="Snowy Owl" width="240">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Bubo_scandiacus_%28Linnaeus%2C_1758%29_Male.jpg" alt="Snowy Owl" width="240">
 
 <sub>Photo: [Michael Gäbler](https://commons.wikimedia.org/wiki/User:Michael_G%C3%A4bler), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)</sub>
 
