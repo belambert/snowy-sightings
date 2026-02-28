@@ -9,13 +9,26 @@ CLI tool to check for recent snowy owl observations using the eBird API.
 
 Get an API key by signing up at https://ebird.org/api/keygen.
 
+For email alerts, set up Gmail SMTP credentials:
+
+    export GMAIL_USER=you@gmail.com
+    export GMAIL_APP_PASSWORD=your-app-password
+
+Generate an app password at https://myaccount.google.com/apppasswords (requires 2FA).
+
 ## Usage
 
-    uv run snowy
+List recent sightings:
+
+    uv run snowy sightings
 
 Defaults to Salem, MA with a 30-mile radius over the last 14 days. Override with options:
 
-    uv run snowy --lat 40.71 --lng -74.01 --dist 50 --days 30
+    uv run snowy sightings --lat 40.71 --lng -74.01 --dist 50 --days 30
+
+Check for new sightings and send email alerts:
+
+    uv run snowy check --to "you@gmail.com,spouse@gmail.com"
 
 ## eBird API
 
