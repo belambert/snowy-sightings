@@ -27,8 +27,8 @@ jobs:
       - name: Check for new sightings
         env:
           EBIRD_API_KEY: ${{ secrets.EBIRD_API_KEY }}
-          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          RESEND_FROM: alerts@resend.dev
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: uv run snowy check --to "${{ vars.EMAIL_TO }}"
 
       - name: Delete old state cache

@@ -1,14 +1,22 @@
-"""Email notifications via Resend."""
+"""Email notifications via Gmail SMTP."""
 
 import os
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-import resend
 
+def send_email(to: list[str], subject: str, body_html: str) -> None:
+    """Send an email via Gmail SMTP."""
+    user = os.environ["GMAIL_USER"]
+    password = os.environ["GMAIL_APP_PASSWORD"]
 
-def send_email(to: list[str], subject: str, body_html: str) -> dict:
-    """Send an email via Resend."""
-    resend.api_key = os.environ["RESEND_API_KEY"]
-    from_addr = os.environ.get("RESEND_FROM", "alerts@resend.dev")
-    return resend.Emails.send(
-        {"from": from_addr, "to": to, "subject": subject, "html": body_html}
-    )
+    msg = MIMEMultipart("alternative")
+    msg["From"] = user
+    msg["To"] = ", ".join(to)
+    msg["Subject"] = subject
+    msg.attach(MIMEText(body_html, "html"))
+
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+        smtp.login(user, password)
+        smtp.sendmail(user, to, msg.as_string())
