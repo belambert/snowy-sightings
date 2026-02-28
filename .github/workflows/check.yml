@@ -2,7 +2,9 @@ name: Snowy Owl Check
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    # hourly 6am-6pm EST (11-23 UTC), Oct-Apr only
+    - cron: "0 11-23 * 1-4 *"
+    - cron: "0 11-23 * 10-12 *"
   workflow_dispatch:
 
 jobs:
