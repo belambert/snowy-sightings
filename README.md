@@ -1,6 +1,6 @@
 # Snowy Sightings
 
-<img src="images/snowy-owl.jpg" alt="Snowy Owl" width="240">
+<img src="images/snowy-owl.png" alt="Snowy Owl" width="240">
 
 <sub>Photo: Stephanie Rinehart-Joseph / [Macaulay Library ML37851091](https://macaulaylibrary.org/asset/37851091)</sub>
 
