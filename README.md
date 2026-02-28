@@ -2,7 +2,7 @@
 
 <img src="images/snowy-owl.jpg" alt="Snowy Owl" width="240">
 
-<sub>Photo: [Michael Gäbler](https://commons.wikimedia.org/wiki/User:Michael_G%C3%A4bler), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)</sub>
+<sub>Photo: Stephanie Rinehart-Joseph / [Macaulay Library ML37851091](https://macaulaylibrary.org/asset/37851091)</sub>
 
 CLI tool to check for recent snowy owl observations using the eBird API.
 
