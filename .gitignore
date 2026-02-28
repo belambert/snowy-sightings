@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.snowy-state.json
+.env
