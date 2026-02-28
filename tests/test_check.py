@@ -5,8 +5,18 @@ from unittest.mock import patch
 from snowy_sightings.check import check_new, load_seen, save_seen
 
 FAKE_OBS = [
-    {"subId": "S100", "locName": "Plum Island", "obsDt": "2026-02-20 10:00", "howMany": 2},
-    {"subId": "S101", "locName": "Salisbury Beach", "obsDt": "2026-02-19 14:30", "howMany": 1},
+    {
+        "subId": "S100",
+        "locName": "Plum Island",
+        "obsDt": "2026-02-20 10:00",
+        "howMany": 2,
+    },
+    {
+        "subId": "S101",
+        "locName": "Salisbury Beach",
+        "obsDt": "2026-02-19 14:30",
+        "howMany": 1,
+    },
 ]
 
 

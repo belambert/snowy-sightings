@@ -18,7 +18,9 @@ from snowy_sightings.config import (
 from snowy_sightings.ebird import recent_observations
 from snowy_sightings.notify import send_email
 
-app = typer.Typer(help="Check eBird for recent snowy owl observations.", add_completion=False)
+app = typer.Typer(
+    help="Check eBird for recent snowy owl observations.", add_completion=False
+)
 
 
 def _require_api_key(api_key: str) -> str:
