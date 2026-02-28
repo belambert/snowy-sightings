@@ -1,0 +1,41 @@
+name: Snowy Owl Check
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v5
+
+      - run: uv sync
+
+      - name: Restore state cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .snowy-state.json
+          key: snowy-state
+          restore-keys: snowy-state
+
+      - name: Check for new sightings
+        env:
+          EBIRD_API_KEY: ${{ secrets.EBIRD_API_KEY }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+        run: uv run snowy check --to "${{ secrets.EMAIL_TO }}"
+
+      - name: Delete old state cache
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh cache delete snowy-state || true
+
+      - name: Save state cache
+        uses: actions/cache/save@v4
+        with:
+          path: .snowy-state.json
+          key: snowy-state

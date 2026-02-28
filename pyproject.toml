@@ -9,6 +9,7 @@ authors = [
 requires-python = ">=3.13"
 dependencies = [
     "httpx>=0.28",
+    "resend>=2.0",
     "typer>=0.15",
 ]
 
