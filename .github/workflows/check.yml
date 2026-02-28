@@ -28,7 +28,7 @@ jobs:
         env:
           EBIRD_API_KEY: ${{ secrets.EBIRD_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
-          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          RESEND_FROM: alerts@resend.dev
         run: uv run snowy check --to "${{ secrets.EMAIL_TO }}"
 
       - name: Delete old state cache
