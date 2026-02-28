@@ -50,6 +50,12 @@ Each observation is returned as a JSON object with these fields:
 
 Checklist URLs can be constructed as `https://ebird.org/checklist/{subId}`.
 
+## Clearing the Cache
+
+The `check` command stores state in a GitHub Actions cache to avoid duplicate alerts. To reset it and re-send alerts for all current sightings:
+
+    gh cache delete snowy-state
+
 ## References
 
 - [eBird API 2.0 Documentation (Postman)](https://documenter.getpostman.com/view/664302/S1ENwy59)
