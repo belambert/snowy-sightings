@@ -36,7 +36,10 @@ def sightings(
         loc = o.get("locName", "Unknown")
         dt = o.get("obsDt", "")
         count = o.get("howMany", "?")
+        url = f"https://ebird.org/checklist/{o['subId']}" if "subId" in o else ""
         typer.echo(f"  {dt}  {count:>3} bird(s)  {loc}")
+        if url:
+            typer.echo(f"    {url}")
 
 
 if __name__ == "__main__":
