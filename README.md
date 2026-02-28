@@ -67,6 +67,18 @@ Each observation is returned as a JSON object with these fields:
 
 Checklist URLs can be constructed as `https://ebird.org/checklist/{subId}`.
 
+## GitHub Actions Workflow
+
+A scheduled workflow (`.github/workflows/check.yml`) runs the `check` command automatically. It checks hourly between 6am–6pm EST, October through April (snowy owl season), and can also be triggered manually.
+
+The workflow requires the following repository configuration:
+
+**Secrets:** `EBIRD_API_KEY`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`
+
+**Variables:** `EMAIL_TO` (comma-separated recipient addresses)
+
+Previously seen sightings are tracked in a GitHub Actions cache to avoid duplicate alerts.
+
 ## Clearing the Cache
 
 The `check` command stores state in a GitHub Actions cache to avoid duplicate alerts. To reset it and re-send alerts for all current sightings:
