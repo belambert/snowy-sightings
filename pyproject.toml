@@ -1,13 +1,19 @@
 [project]
-name = "template"
+name = "snowy-sightings"
 version = "0.1.0"
-description = "Add your description here"
+description = "Check eBird for recent snowy owl observations"
 readme = "README.md"
 authors = [
     { name = "Ben Lambert", email = "blambert@gmail.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "httpx>=0.28",
+    "typer>=0.15",
+]
+
+[project.scripts]
+snowy = "snowy_sightings.cli:app"
 
 [build-system]
 requires = ["uv_build>=0.9.3,<0.11.0"]
